@@ -45,6 +45,7 @@ data['Risk'] = data.apply(lambda x: 1 if 'Diarrhea' in x['Symptoms'] or x['Bacte
 # Initialize Dash App
 # ------------------------------
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div([
     html.H1("Health & Water Quality Dashboard", style={'textAlign': 'center'}),
@@ -231,3 +232,4 @@ def download_graph(btn_png, btn_html, tab, selected_village, start_date, end_dat
 # ------------------------------
 if __name__ == '__main__':
     app.run(debug=True)
+
